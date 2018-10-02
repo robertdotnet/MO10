@@ -1,0 +1,19 @@
+﻿<Window x:Class="MO10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MO10"
+        mc:Ignorable="d"
+        Title="MO10 - v0.1 (Developed by Robert Munteanu)" Height="450" Width="500">
+    <Grid Name="MainGrid" Background="DarkGreen">
+
+        <Button Click="AddMotivationButton" Height="40" Width="170" HorizontalAlignment="Center" VerticalAlignment="Top" IsCancel="True" FontSize="14" FontWeight="Bold" Background="Green">
+            Add a motivation now
+        </Button>
+        <ListBox Name="MainListBox" Height="314" Width="400" VerticalAlignment="Top" Margin="46,60,46,53" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
+            
+        </ListBox>
+        <Button IsEnabled="False" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Background="#FFCBF35F" FontWeight="Bold" BorderBrush="#FFE69B9B">Update motivation</Button>
+    </Grid>
+</Window>

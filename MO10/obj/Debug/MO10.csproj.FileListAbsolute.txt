@@ -1,0 +1,17 @@
+E:\projects\MO10\MO10\bin\Debug\MO10.exe.config
+E:\projects\MO10\MO10\bin\Debug\MO10.exe
+E:\projects\MO10\MO10\bin\Debug\MO10.pdb
+E:\projects\MO10\MO10\obj\Debug\MO10.csprojAssemblyReference.cache
+E:\projects\MO10\MO10\obj\Debug\App.g.cs
+E:\projects\MO10\MO10\obj\Debug\MO10_MarkupCompile.cache
+E:\projects\MO10\MO10\obj\Debug\MO10_MarkupCompile.lref
+E:\projects\MO10\MO10\obj\Debug\MO10.g.resources
+E:\projects\MO10\MO10\obj\Debug\MO10.Properties.Resources.resources
+E:\projects\MO10\MO10\obj\Debug\MO10.csproj.GenerateResource.cache
+E:\projects\MO10\MO10\obj\Debug\MO10.csproj.CoreCompileInputs.cache
+E:\projects\MO10\MO10\obj\Debug\MO10.exe
+E:\projects\MO10\MO10\obj\Debug\MO10.pdb
+E:\projects\MO10\MO10\obj\Debug\Views\MainWindow.g.cs
+E:\projects\MO10\MO10\obj\Debug\Views\NewMotivationWindow.g.cs
+E:\projects\MO10\MO10\obj\Debug\Views\MainWindow.baml
+E:\projects\MO10\MO10\obj\Debug\Views\NewMotivationWindow.baml
