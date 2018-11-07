@@ -31,6 +31,16 @@ namespace MO10
             newMotivationWindow.Show();
         }
 
+        private void UpdateButton(object sender, RoutedEventArgs e)
+        {
+            MotivationViewModel mvm = new MotivationViewModel();
+            MotivationModel motivation1 = new MotivationModel("test1", 210);
+            MotivationModel motivation2 = new MotivationModel("test2", 230);
+            mvm.models.Add(motivation1);
+            mvm.models.Add(motivation2);
+            mvm.UpdateData();
+        }
+
 
         //private void AddMotivationButton(object sender, RoutedEventArgs e)
         //{

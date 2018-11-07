@@ -15,3 +15,6 @@ E:\projects\MO10\MO10\obj\Debug\Views\MainWindow.g.cs
 E:\projects\MO10\MO10\obj\Debug\Views\NewMotivationWindow.g.cs
 E:\projects\MO10\MO10\obj\Debug\Views\MainWindow.baml
 E:\projects\MO10\MO10\obj\Debug\Views\NewMotivationWindow.baml
+E:\projects\MO10\MO10\bin\Debug\Newtonsoft.Json.dll
+E:\projects\MO10\MO10\bin\Debug\Newtonsoft.Json.xml
+E:\projects\MO10\MO10\obj\Debug\MO10.csproj.CopyComplete
