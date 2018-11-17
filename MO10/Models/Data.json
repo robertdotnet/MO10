@@ -1,1 +1,12 @@
-{"Aim":"test1","Value":210.0,"Description":"no description"}{"Aim":"test2","Value":230.0,"Description":"no description"}
+[
+{
+  "Aim": "test1",
+  "Value": 210.0,
+  "Description": "no description"
+},
+{
+  "Aim": "test2",
+  "Value": 230.0,
+  "Description": "no description"
+}
+]

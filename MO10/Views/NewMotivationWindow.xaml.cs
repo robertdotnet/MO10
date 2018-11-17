@@ -28,28 +28,45 @@ namespace MO10
 
         private void GetStartedButton(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).motivationModel = new MotivationModel(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text));
-            ((MainWindow)Application.Current.MainWindow).ready = true;
             CreateBox();
             this.Close();
         }
 
         private void CreateBox()
         {
-            ListBox MotivationBox = new ListBox() { Height = 90, Width = 370, };
-            Label MotivationName = new Label() { Content = ((MainWindow)Application.Current.MainWindow).motivationModel.Aim, FontWeight = FontWeights.Bold, Focusable = false };
-            ProgressBar MotivationProgress = new ProgressBar() { Height = 16, Width = 350, Focusable = false };
-            MotivationProgress.Maximum = ((MainWindow)Application.Current.MainWindow).motivationModel.Value;
-            Label MotivationValues = new Label() { Content = MotivationProgress.Value + "/" + MotivationProgress.Maximum + "€", Focusable = false };
+            ListBox MotivationBox;
+            Label MotivationName, MotivationValues;
+            ProgressBar MotivationProgress;
+            DefineBox(out MotivationBox, out MotivationName, out MotivationProgress, out MotivationValues);
+            SetupBox(MotivationBox, MotivationName, MotivationProgress, MotivationValues);
+            ShowBox(MotivationBox);
+            UpdateData();
+        }
 
+        private void UpdateData()
+        {
+            ((MainWindow)Application.Current.MainWindow).Data.Add(new MotivationModel(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text), DescriptionTextBox.Text));
+        }
 
+        private static void DefineBox(out ListBox MotivationBox, out Label MotivationName, out ProgressBar MotivationProgress, out Label MotivationValues)
+        {
+            MotivationBox = new ListBox() { Height = 90, Width = 370, };
+            MotivationName = new Label() { Content = ((MainWindow)Application.Current.MainWindow).InsertionModel.Aim, FontWeight = FontWeights.Bold, Focusable = false };
+            MotivationProgress = new ProgressBar() { Height = 16, Width = 350, Focusable = false };
+            MotivationProgress.Maximum = ((MainWindow)Application.Current.MainWindow).InsertionModel.Value;
+            MotivationValues = new Label() { Content = MotivationProgress.Value + "/" + MotivationProgress.Maximum + "€", Focusable = false };
+        }
 
+        private static void ShowBox(ListBox MotivationBox)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainListBox.Items.Add(MotivationBox);
+        }
+
+        private static void SetupBox(ListBox MotivationBox, Label MotivationName, ProgressBar MotivationProgress, Label MotivationValues)
+        {
             MotivationBox.Items.Add(MotivationName);
             MotivationBox.Items.Add(MotivationProgress);
             MotivationBox.Items.Add(MotivationValues);
-
-            ((MainWindow)Application.Current.MainWindow).MainListBox.Items.Add(MotivationBox);
-            ((MainWindow)Application.Current.MainWindow).ready = false;
         }
     }
 }

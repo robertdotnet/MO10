@@ -17,13 +17,20 @@ namespace MO10
 {
     public partial class MainWindow : Window
     {
+        public MotivationViewModel Data = new MotivationViewModel();
+        public MotivationModel InsertionModel { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            ShowData();
         }
 
-        public MotivationModel motivationModel { get; set; }
-        public bool ready = false;
+        private void ShowData()
+        {
+            Data.FetchCurrentCollection();
+        }
+
 
         private void AddMotivationButton(object sender, RoutedEventArgs e)
         {
@@ -33,28 +40,12 @@ namespace MO10
 
         private void UpdateButton(object sender, RoutedEventArgs e)
         {
-            MotivationViewModel mvm = new MotivationViewModel();
-            MotivationModel motivation1 = new MotivationModel("test1", 210);
-            MotivationModel motivation2 = new MotivationModel("test2", 230);
-            mvm.models.Add(motivation1);
-            mvm.models.Add(motivation2);
-            mvm.UpdateData();
+        //    MotivationViewModel mvm = new MotivationViewModel();
+        //    MotivationModel motivation1 = new MotivationModel("test1", 210);
+        //    MotivationModel motivation2 = new MotivationModel("test2", 230);
+        //    mvm.models.Add(motivation1);
+        //    mvm.models.Add(motivation2);
+        //    mvm.UpdateData();
         }
-
-
-        //private void AddMotivationButton(object sender, RoutedEventArgs e)
-        //{
-        //    Button dummyButton = new Button() {
-        //        Height = 40,
-        //        Width = 170,
-        //        HorizontalAlignment = HorizontalAlignment.Left,
-        //        VerticalAlignment = VerticalAlignment.Bottom,
-        //        Content = "dummy"
-        //    };
-
-        //    MainGrid.Children.Add(dummyButton);
-        //}
-
-
     }
 }

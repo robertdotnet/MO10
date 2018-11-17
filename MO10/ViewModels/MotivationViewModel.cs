@@ -10,16 +10,21 @@ namespace MO10
 {
     public class MotivationViewModel
     {
-        public List<MotivationModel> models = new List<MotivationModel>();
+        private List<MotivationModel> Models = new List<MotivationModel>();
 
         public void Add(MotivationModel motivation)
         {
-            models.Add(motivation);
+            Models.Add(motivation);
         }
 
         public void Remove(MotivationModel motivation)
         {
-            models.Remove(motivation);
+            Models.Remove(motivation);
+        }
+
+        public void Clear()
+        {
+            Models.Clear();
         }
 
         public void UpdateData()
@@ -28,19 +33,29 @@ namespace MO10
             {
                 File.Delete(@"./../../Models/Data.json");
             }
+
             TextWriter textWriter = new StreamWriter(@"./../../Models/Data.json", true);
-            foreach (var motivation in models)
+            string output = "[\n";
+            foreach (var motivation in Models)
             {
-                string output = JsonConvert.SerializeObject(motivation);
-                textWriter.Write(output);
+                output += JsonConvert.SerializeObject(motivation, Formatting.Indented) + ",\n";
             }
+            output = output.Substring(0, output.Length - 2);
+            output += "\n]";
+            textWriter.Write(output);
             textWriter.Close();
-            ShowNewData();
+
+            FetchCurrentCollection();
         }
 
-        private void ShowNewData()
+        public void FetchCurrentCollection()
         {
-
+            Clear();
+            if (File.Exists(@"./../../Models/Data.json"))
+            {
+                string JSONString = File.ReadAllText(@"./../../Models/Data.json", Encoding.UTF8);
+                Models = JsonConvert.DeserializeObject<List<MotivationModel>>(JSONString);
+            }
         }
     }
 }

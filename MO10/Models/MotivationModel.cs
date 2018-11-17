@@ -8,6 +8,8 @@ namespace MO10
 {
     public class MotivationModel
     {
+        public MotivationModel() { }
+
         public MotivationModel(string aim, double value, string description)
         {
             Aim = aim;
