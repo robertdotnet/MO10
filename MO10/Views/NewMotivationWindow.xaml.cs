@@ -34,7 +34,7 @@ namespace MO10
 
         private void CreateBox()
         {
-            ListBox MotivationBox;
+            ItemsControl MotivationBox;
             Label MotivationName, MotivationValues;
             ProgressBar MotivationProgress;
             DefineBox(out MotivationBox, out MotivationName, out MotivationProgress, out MotivationValues);
@@ -48,21 +48,21 @@ namespace MO10
             ((MainWindow)Application.Current.MainWindow).Data.Add(new MotivationModel(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text), DescriptionTextBox.Text));
         }
 
-        private static void DefineBox(out ListBox MotivationBox, out Label MotivationName, out ProgressBar MotivationProgress, out Label MotivationValues)
+        private static void DefineBox(out ItemsControl MotivationBox, out Label MotivationName, out ProgressBar MotivationProgress, out Label MotivationValues)
         {
-            MotivationBox = new ListBox() { Height = 90, Width = 370, };
+            MotivationBox = new ItemsControl() { Height = 90, Width = 370, };
             MotivationName = new Label() { Content = ((MainWindow)Application.Current.MainWindow).InsertionModel.Aim, FontWeight = FontWeights.Bold, Focusable = false };
             MotivationProgress = new ProgressBar() { Height = 16, Width = 350, Focusable = false };
             MotivationProgress.Maximum = ((MainWindow)Application.Current.MainWindow).InsertionModel.Value;
             MotivationValues = new Label() { Content = MotivationProgress.Value + "/" + MotivationProgress.Maximum + "€", Focusable = false };
         }
 
-        private static void ShowBox(ListBox MotivationBox)
+        private static void ShowBox(ItemsControl MotivationBox)
         {
             ((MainWindow)Application.Current.MainWindow).MainListBox.Items.Add(MotivationBox);
         }
 
-        private static void SetupBox(ListBox MotivationBox, Label MotivationName, ProgressBar MotivationProgress, Label MotivationValues)
+        private static void SetupBox(ItemsControl MotivationBox, Label MotivationName, ProgressBar MotivationProgress, Label MotivationValues)
         {
             MotivationBox.Items.Add(MotivationName);
             MotivationBox.Items.Add(MotivationProgress);

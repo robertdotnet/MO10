@@ -18,6 +18,8 @@ namespace MO10
     public partial class MainWindow : Window
     {
         public MotivationViewModel Data = new MotivationViewModel();
+
+        //TO REMOVE
         public MotivationModel InsertionModel { get; set; }
 
         public MainWindow()
@@ -29,6 +31,30 @@ namespace MO10
         private void ShowData()
         {
             Data.FetchCurrentCollection();
+
+            foreach (MotivationModel motivationModel in Data.GetAll())
+            {
+                CreateAndAddBox(motivationModel);
+            }
+        }
+
+        private void CreateAndAddBox(MotivationModel motivationModel)
+        {
+            //actual creation
+            ItemsControl itemsControl = new ItemsControl() { Height = 90, Width = 370, Background=Brushes.Coral };
+            Label motivationNameLabel = new Label() { Content = motivationModel.Aim, FontWeight = FontWeights.Bold, Focusable = false };
+            ProgressBar motivationProgress = new ProgressBar() { Height = 16, Width = 350, Maximum = motivationModel.Value, Focusable = false };
+
+            //test value
+            motivationProgress.Value = 20;
+
+            Label motivationValueLabel = new Label() { Content = motivationProgress.Value + "/" + motivationProgress.Maximum + "€", Focusable = false };
+
+            //the adding
+            itemsControl.Items.Add(motivationNameLabel);
+            itemsControl.Items.Add(motivationProgress);
+            itemsControl.Items.Add(motivationValueLabel);
+            MainListBox.Items.Add(itemsControl);
         }
 
 
@@ -39,13 +65,6 @@ namespace MO10
         }
 
         private void UpdateButton(object sender, RoutedEventArgs e)
-        {
-        //    MotivationViewModel mvm = new MotivationViewModel();
-        //    MotivationModel motivation1 = new MotivationModel("test1", 210);
-        //    MotivationModel motivation2 = new MotivationModel("test2", 230);
-        //    mvm.models.Add(motivation1);
-        //    mvm.models.Add(motivation2);
-        //    mvm.UpdateData();
-        }
+        { }
     }
 }

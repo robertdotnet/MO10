@@ -12,6 +12,11 @@ namespace MO10
     {
         private List<MotivationModel> Models = new List<MotivationModel>();
 
+        public List<MotivationModel> GetAll()
+        {
+            return Models;
+        }
+
         public void Add(MotivationModel motivation)
         {
             Models.Add(motivation);
@@ -53,7 +58,7 @@ namespace MO10
             Clear();
             if (File.Exists(@"./../../Models/Data.json"))
             {
-                string JSONString = File.ReadAllText(@"./../../Models/Data.json", Encoding.UTF8);
+                string JSONString = File.ReadAllText(@"./../../Models/Data.json");
                 Models = JsonConvert.DeserializeObject<List<MotivationModel>>(JSONString);
             }
         }

@@ -24,8 +24,8 @@ namespace MO10
             Description = "no description";
         }
 
-        public string Aim { get; private set; }
-        public double Value { get; private set; }
-        public string Description { get; private set; }
+        public string Aim { get; set; }
+        public double Value { get; set; }
+        public string Description { get; set; }
     }
 }
