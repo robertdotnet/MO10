@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="MO10 - v0.1 (Developed by Robert Munteanu)" Height="450" Width="500">
+        Title="MO10 - v0.5.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
     <Grid Name="MainGrid" Background="DarkGreen">
 
         <Button Click="AddMotivationButton" Height="40" Width="170" HorizontalAlignment="Center" VerticalAlignment="Top" IsCancel="True" FontSize="14" FontWeight="Bold" Background="Green">
             Add a motivation now
         </Button>
-        <ListBox Name="MainListBox" Height="314" Width="400" VerticalAlignment="Top" Margin="46,60,46,53" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
-            
+        <ListBox Name="MainListBox" Height="603"  VerticalAlignment="Top" Margin="26,60,26,0" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
+
         </ListBox>
-        <Button Click="UpdateButton" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Background="#FFCBF35F" FontWeight="Bold" BorderBrush="#FFE69B9B">Update motivation</Button>
     </Grid>
 </Window>
