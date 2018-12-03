@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\projects\MO10\MO10\App.xaml
-2663905428
+3351942965
 
-12717754150
+131424759787
 14-1108886108
-Views\MainWindow.xaml;Views\NewMotivationWindow.xaml;
+Views\EditMotivationWindow.xaml;Views\MainWindow.xaml;Views\NewMotivationWindow.xaml;
 
-True
+False
 

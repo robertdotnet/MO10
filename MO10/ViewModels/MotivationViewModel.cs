@@ -12,6 +12,16 @@ namespace MO10
     {
         private List<MotivationModel> Models = new List<MotivationModel>();
 
+        public bool isEmptyOrNull()
+        {
+            if(Models == null)
+                return true;
+            if(Models.Count == 0)
+                return true;
+            else
+                return false;
+        }
+
         public List<MotivationModel> GetAll()
         {
             return Models;
@@ -22,9 +32,17 @@ namespace MO10
             Models.Add(motivation);
         }
 
-        public void Remove(MotivationModel motivation)
+        public void RemoveByAim(string aim)
         {
-            Models.Remove(motivation);
+            foreach(var model in Models)
+            {
+                if(model.Aim == aim)
+                {
+                    Models.Remove(model);
+                    break;
+                }
+            }
+            UpdateData();
         }
 
         public void Clear()
@@ -34,19 +52,20 @@ namespace MO10
 
         public void UpdateData()
         {
-            if (File.Exists(@"./../../Models/Data.json"))
+            if(File.Exists(@"./../../Models/Data.json"))
             {
                 File.Delete(@"./../../Models/Data.json");
             }
 
             TextWriter textWriter = new StreamWriter(@"./../../Models/Data.json", true);
             string output = "[\n";
-            foreach (var motivation in Models)
+            foreach(var motivation in Models)
             {
                 output += JsonConvert.SerializeObject(motivation, Formatting.Indented) + ",\n";
             }
             output = output.Substring(0, output.Length - 2);
-            output += "\n]";
+            if(Models.Count > 0)
+                output += "\n]";
             textWriter.Write(output);
             textWriter.Close();
 
@@ -55,11 +74,26 @@ namespace MO10
 
         public void FetchCurrentCollection()
         {
-            Clear();
-            if (File.Exists(@"./../../Models/Data.json"))
+            if(Models.Count != 0)
             {
-                string JSONString = File.ReadAllText(@"./../../Models/Data.json");
-                Models = JsonConvert.DeserializeObject<List<MotivationModel>>(JSONString);
+                Clear();
+                if(File.Exists(@"./../../Models/Data.json"))
+                {
+                    string JSONString = File.ReadAllText(@"./../../Models/Data.json");
+                    Models = JsonConvert.DeserializeObject<List<MotivationModel>>(JSONString);
+                }
+            }
+            else
+            {
+                Clear();
+                if(File.Exists(@"./../../Models/Data.json"))
+                {
+                    string JSONString = File.ReadAllText(@"./../../Models/Data.json");
+                    if(JSONString != null && JSONString != "")
+                    {
+                        Models = JsonConvert.DeserializeObject<List<MotivationModel>>(JSONString);
+                    }
+                }
             }
         }
     }

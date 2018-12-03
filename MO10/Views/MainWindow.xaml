@@ -14,5 +14,9 @@
         <ListBox Name="MainListBox" Height="603"  VerticalAlignment="Top" Margin="26,60,26,0" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
 
         </ListBox>
+        <Button Name="DeleteButton" Click="DeleteMotivationButton" Height="40" Width="140" Content="Delete" Background="Red" FontFamily="bold" FontSize="20" Margin="163,686,889,43">
+        </Button>
+        <Button Content="Update/Edit" Click="EditMotivationButton" Height="40" Width="140" FontFamily="bold" FontSize="20" Background="Blue" Margin="355,686,697,43">            
+        </Button>
     </Grid>
 </Window>

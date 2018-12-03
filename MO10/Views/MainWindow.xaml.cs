@@ -29,12 +29,14 @@ namespace MO10
         public void ShowData()
         {
             ClearCurrentItems();
-            Data.FetchCurrentCollection();
 
-            foreach (MotivationModel motivationModel in Data.GetAll())
+            Data.FetchCurrentCollection();
+            if (!Data.isEmptyOrNull())
+            foreach(MotivationModel motivationModel in Data.GetAll())
             {
                 CreateAndAddBox(motivationModel);
             }
+
 
         }
 
@@ -51,22 +53,40 @@ namespace MO10
         private void CreateAndAddBox(MotivationModel motivationModel)
         {
             //actual creation
-            ItemsControl itemsControl = new ItemsControl() { Height = 90, Width = 370, Background=Brushes.Coral };
-            Label motivationNameLabel = new Label() { Content = motivationModel.Aim, FontWeight = FontWeights.Bold, Focusable = false };
-            ProgressBar motivationProgress = new ProgressBar() { Height = 16, Width = 350, Maximum = motivationModel.FinalValue, Focusable = false };
+            ItemsControl itemsControl = new ItemsControl() { Height = 145, Width = 1112, Background = Brushes.Coral };
+            Label motivationNameLabel = new Label() { Content = motivationModel.Aim, FontSize = 15, FontWeight = FontWeights.Bold, Focusable = false };
+            ProgressBar motivationProgress = new ProgressBar() { Height = 25, Width = 1092, Maximum = motivationModel.FinalValue, Focusable = false };
 
-            //test value
+
+
             motivationProgress.Value = motivationModel.CurrentValue;
 
-            Label motivationValueLabel = new Label() { Content = motivationProgress.Value + "/" + motivationProgress.Maximum + "€", Focusable = false };
+            Label motivationValueLabel = new Label() { Content = motivationProgress.Value + "/" + motivationProgress.Maximum + "€", FontSize = 13, FontWeight = FontWeights.DemiBold, Focusable = false };
 
             //the inclusion
             itemsControl.Items.Add(motivationNameLabel);
-            itemsControl.Items.Add(motivationProgress);
             itemsControl.Items.Add(motivationValueLabel);
+            itemsControl.Items.Add(motivationProgress);
             MainListBox.Items.Add(itemsControl);
         }
 
+        private void EditMotivationButton(object sender, RoutedEventArgs e)
+        {
+            ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
+            string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+
+        }
+
+        private void DeleteMotivationButton(object sender, RoutedEventArgs e)
+        {
+            ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
+            string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+            string selectedAim = fullStringToProcess.Substring(31);
+            Data.RemoveByAim(selectedAim);
+            MessageBox.Show("Getting a " + selectedAim + " no longer motivates you. It's a lost cause :(");
+
+            ShowData();
+        }
 
         private void AddMotivationButton(object sender, RoutedEventArgs e)
         {
