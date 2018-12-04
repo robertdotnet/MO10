@@ -23,5 +23,15 @@ namespace MO10.Views
         {
             InitializeComponent();
         }
+
+        private void CancelButton(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void SaveButton(object sender, RoutedEventArgs e)
+        {
+            //to implement save feature logic for update
+        }
     }
 }
