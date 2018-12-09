@@ -12,16 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MO10.Views
+namespace MO10
 {
     /// <summary>
     /// Interaction logic for EditMotivationWindow.xaml
     /// </summary>
     public partial class EditMotivationWindow : Window
     {
-        public EditMotivationWindow()
+        private MotivationModel motivationToEdit;
+        public EditMotivationWindow(MotivationModel model)
         {
             InitializeComponent();
+            LoadContent(model);
+        }
+
+        private void LoadContent(MotivationModel model)
+        {
+            motivationToEdit = model;
+            AimNameText.Text = model.Aim;
+            CurrentValueText.Text = model.CurrentValue.ToString();
+            AimValueText.Text = model.FinalValue.ToString();
+            DescriptionText.Text = model.Description;
         }
 
         private void CancelButton(object sender, RoutedEventArgs e)
@@ -31,7 +42,15 @@ namespace MO10.Views
 
         private void SaveButton(object sender, RoutedEventArgs e)
         {
-            //to implement save feature logic for update
+            MotivationModel newModel = new MotivationModel();
+            newModel.Aim = AimNameText.Text;
+            newModel.CurrentValue = Convert.ToDouble(CurrentValueText.Text);
+            newModel.FinalValue = Convert.ToDouble(AimValueText.Text);
+            newModel.Description = DescriptionText.Text;
+
+            ((MainWindow)Application.Current.MainWindow).Data.EditUsingName(newModel);
+            ((MainWindow)Application.Current.MainWindow).ShowData();
+            this.Close();
         }
     }
 }

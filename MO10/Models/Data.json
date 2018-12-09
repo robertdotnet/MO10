@@ -1,8 +1,14 @@
 [
 {
-  "Aim": "qwerdsfg",
-  "CurrentValue": 0.0,
-  "FinalValue": 1232546.0,
+  "Aim": "new house",
+  "CurrentValue": 60000.0,
+  "FinalValue": 450000.0,
+  "Description": "no description"
+},
+{
+  "Aim": "new car",
+  "CurrentValue": 1400.0,
+  "FinalValue": 5600.0,
   "Description": "no description"
 }
 ]

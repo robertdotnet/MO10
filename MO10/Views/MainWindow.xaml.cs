@@ -31,13 +31,11 @@ namespace MO10
             ClearCurrentItems();
 
             Data.FetchCurrentCollection();
-            if (!Data.isEmptyOrNull())
-            foreach(MotivationModel motivationModel in Data.GetAll())
-            {
-                CreateAndAddBox(motivationModel);
-            }
-
-
+            if(!Data.isEmptyOrNull())
+                foreach(MotivationModel motivationModel in Data.GetAll())
+                {
+                    CreateAndAddBox(motivationModel);
+                }
         }
 
         public void UpdateData()
@@ -73,19 +71,37 @@ namespace MO10
         private void EditMotivationButton(object sender, RoutedEventArgs e)
         {
             ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
-            string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+            if(selectedItemsControl == null)
+            {
+                MessageBox.Show("Please select an item to edit");
+            }
+            else
+            {
+                string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+                string selectedAim = fullStringToProcess.Substring(31);
+                MotivationModel motivationToEdit = Data.GetByAim(selectedAim);
 
+                EditMotivationWindow editMotivationWindow = new EditMotivationWindow(motivationToEdit);
+                editMotivationWindow.Show();
+            }
         }
 
         private void DeleteMotivationButton(object sender, RoutedEventArgs e)
         {
             ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
-            string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
-            string selectedAim = fullStringToProcess.Substring(31);
-            Data.RemoveByAim(selectedAim);
-            MessageBox.Show("Getting a " + selectedAim + " no longer motivates you. It's a lost cause :(");
 
-            ShowData();
+            if(selectedItemsControl == null)
+            {
+                MessageBox.Show("Please select an item to delete");
+            }
+            else
+            {
+                string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+                string selectedAim = fullStringToProcess.Substring(31);
+                Data.RemoveByAim(selectedAim);
+                MessageBox.Show("Getting a " + selectedAim + " no longer motivates you. It's a lost cause :(");
+                ShowData();
+            }
         }
 
         private void AddMotivationButton(object sender, RoutedEventArgs e)

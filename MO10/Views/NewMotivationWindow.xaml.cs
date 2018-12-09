@@ -32,8 +32,7 @@ namespace MO10
                 UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text));
             else
                 UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text), DescriptionTextBox.Text);
-
-            ((MainWindow)Application.Current.MainWindow).UpdateData();
+            
             ((MainWindow)Application.Current.MainWindow).ShowData();
             this.Close();
         }

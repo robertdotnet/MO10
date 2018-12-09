@@ -27,9 +27,32 @@ namespace MO10
             return Models;
         }
 
-        public void Add(MotivationModel motivation)
+        public MotivationModel GetByAim(string Aim)
         {
-            Models.Add(motivation);
+            MotivationModel returningModel = null;
+            foreach(var model in Models)
+            {
+                if(model.Aim == Aim)
+                {
+                    returningModel = model;
+                    break;
+                }
+            }
+            return returningModel;
+        }
+
+        public void Add(MotivationModel model)
+        {
+            Models.Add(model);
+            UpdateData();
+        }
+
+        public void EditUsingName(MotivationModel model)
+        {
+            //used for when name is not modified
+            RemoveByAim(model.Aim);
+            Add(model);
+            UpdateData();
         }
 
         public void RemoveByAim(string aim)
