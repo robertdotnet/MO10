@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="MO10 - v0.8.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
+        Title="MO10 - v1.0.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
     <Grid Name="MainGrid" Background="DarkGreen">
 
         <Button Click="AddMotivationButton" Height="40" Width="170" HorizontalAlignment="Center" VerticalAlignment="Top" IsCancel="True" FontSize="14" FontWeight="Bold" Background="Green">
