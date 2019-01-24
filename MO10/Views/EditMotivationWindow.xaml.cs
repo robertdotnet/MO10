@@ -14,12 +14,10 @@ using System.Windows.Shapes;
 
 namespace MO10
 {
-    /// <summary>
-    /// Interaction logic for EditMotivationWindow.xaml
-    /// </summary>
     public partial class EditMotivationWindow : Window
     {
         private MotivationModel motivationToEdit;
+        private MotivationModel originalMotivation;
         public EditMotivationWindow(MotivationModel model)
         {
             InitializeComponent();
@@ -29,6 +27,7 @@ namespace MO10
         private void LoadContent(MotivationModel model)
         {
             motivationToEdit = model;
+            originalMotivation = model;
             AimNameText.Text = model.Aim;
             CurrentValueText.Text = model.CurrentValue.ToString();
             AimValueText.Text = model.FinalValue.ToString();
@@ -48,9 +47,17 @@ namespace MO10
             newModel.FinalValue = Convert.ToDouble(AimValueText.Text);
             newModel.Description = DescriptionText.Text;
 
-            ((MainWindow)Application.Current.MainWindow).Data.EditUsingName(newModel);
-            ((MainWindow)Application.Current.MainWindow).ShowData();
-            this.Close();
+            if(newModel.CurrentValue > newModel.FinalValue)
+            {
+                MessageBox.Show("You can't go above the target value");
+                this.Close();
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).Data.EditUsingName(newModel, originalMotivation);
+                ((MainWindow)Application.Current.MainWindow).ShowData();
+                this.Close();
+            }
         }
     }
 }

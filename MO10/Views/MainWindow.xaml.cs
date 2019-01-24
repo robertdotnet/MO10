@@ -24,8 +24,7 @@ namespace MO10
             InitializeComponent();
             ShowData();
         }
-
-        // public for test
+        
         public void ShowData()
         {
             ClearCurrentItems();
@@ -51,7 +50,7 @@ namespace MO10
         private void CreateAndAddBox(MotivationModel motivationModel)
         {
             //actual creation
-            ItemsControl itemsControl = new ItemsControl() { Height = 145, Width = 1112, Background = Brushes.Coral };
+            ItemsControl itemsControl = new ItemsControl() { Height = 105, Width = 1120, Background = Brushes.Coral };
             Label motivationNameLabel = new Label() { Content = motivationModel.Aim, FontSize = 15, FontWeight = FontWeights.Bold, Focusable = false };
             ProgressBar motivationProgress = new ProgressBar() { Height = 25, Width = 1092, Maximum = motivationModel.FinalValue, Focusable = false };
 
@@ -66,6 +65,27 @@ namespace MO10
             itemsControl.Items.Add(motivationValueLabel);
             itemsControl.Items.Add(motivationProgress);
             MainListBox.Items.Add(itemsControl);
+        }
+
+        private void DescriptionButton(object sender, RoutedEventArgs e)
+        {
+            ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
+
+            if(selectedItemsControl == null)
+            {
+                MessageBox.Show("Please select an item to show description");
+            }
+            else
+            {
+                string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+                string selectedAim = fullStringToProcess.Substring(31);
+                MotivationModel motivationToEdit = Data.GetByAim(selectedAim);
+
+
+                //TO EDIT HERE
+                DescriptionWindow descriptionWindow = new DescriptionWindow(motivationToEdit);
+                descriptionWindow.Show();
+            }
         }
 
         private void EditMotivationButton(object sender, RoutedEventArgs e)

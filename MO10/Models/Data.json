@@ -1,14 +1,8 @@
 [
 {
-  "Aim": "new house",
+  "Aim": "New House",
   "CurrentValue": 60000.0,
   "FinalValue": 450000.0,
-  "Description": "no description"
-},
-{
-  "Aim": "new car",
-  "CurrentValue": 1400.0,
-  "FinalValue": 5600.0,
-  "Description": "no description"
+  "Description": "I'm planning to move into a new house by the end of this year."
 }
 ]

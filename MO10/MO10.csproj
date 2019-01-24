@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\DescriptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditMotivationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -72,6 +76,9 @@
     </Compile>
     <Compile Include="Models\MotivationModel.cs" />
     <Compile Include="ViewModels\MotivationViewModel.cs" />
+    <Compile Include="Views\DescriptionWindow.xaml.cs">
+      <DependentUpon>DescriptionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditMotivationWindow.xaml.cs">
       <DependentUpon>EditMotivationWindow.xaml</DependentUpon>
     </Compile>
@@ -114,6 +121,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\description1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

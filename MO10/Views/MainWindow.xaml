@@ -5,18 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="MO10 - v1.0.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
-    <Grid Name="MainGrid" Background="DarkGreen">
+        Title="OMAF - v1.2.3 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
 
-        <Button Click="AddMotivationButton" Height="40" Width="170" HorizontalAlignment="Center" VerticalAlignment="Top" IsCancel="True" FontSize="14" FontWeight="Bold" Background="Green">
-            Add a motivation now
+    <Grid Name="MainGrid" Background="DarkGreen">
+        <Button Background="Green" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="10" Click="AddMotivationButton">
+            <Button.Content>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="./../Assets/new1.png" Height="36" Width="77" />
+                    <TextBlock Text="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
         </Button>
-        <ListBox Name="MainListBox" Height="603"  VerticalAlignment="Top" Margin="26,60,26,0" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
+        <Button Click="EditMotivationButton" Background="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="85,10,0,0" >
+            <Button.Content>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="./../Assets/edit1.png" Height="36" Width="77" />
+                    <TextBlock Text="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Name="DeleteButton" Click="DeleteMotivationButton" Background="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="160,10,0,0" >
+            <Button.Content>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="./../Assets/delete1.png" Height="36" Width="77" />
+                    <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Click="DescriptionButton" Background="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="235,10,0,0" >
+            <Button.Content>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="./../Assets/description1.png" Height="36" Width="77" />
+                    <TextBlock Text="Info" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <ListBox Name="MainListBox" Height="673"  VerticalAlignment="Top" Margin="10,75,26,0" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
 
         </ListBox>
-        <Button Name="DeleteButton" Click="DeleteMotivationButton" Height="40" Width="140" Content="Delete" Background="Red" FontFamily="bold" FontSize="20" Margin="163,686,889,43">
-        </Button>
-        <Button Content="Update/Edit" Click="EditMotivationButton" Height="40" Width="140" FontFamily="bold" FontSize="20" Background="Blue" Margin="355,686,697,43">            
-        </Button>
     </Grid>
 </Window>

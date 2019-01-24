@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="Edit" Height="470" Width="800">
-    <Grid Margin="0,0,-8,0">
-        <Label Content="Aim name" Margin="82,140,626,252" />
-        <Label Content="Current value" Margin="82,167,626,228" />
-        <Label Content="Aim value" Margin="82,196,645,195"/>
-        <Label Content="Description" Margin="82,229,626,161" />
-        <TextBox Name="AimNameText" HorizontalAlignment="Left" Height="23" Margin="192,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="CurrentValueText" HorizontalAlignment="Left" Height="23" Margin="192,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="AimValueText" HorizontalAlignment="Left" Height="23" Margin="192,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="DescriptionText" HorizontalAlignment="Left" Height="23" Margin="192,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Click="CancelButton" Content="Cancel" Height="30" Width="60" Margin="128,356,604,33"></Button>
-        <Button Click="SaveButton" Content="Save" Height="30" Width="60" Margin="634,356,98,33"></Button>
+        Title="Edit" Height="311" Width="557" WindowStartupLocation="CenterScreen">
+    <Grid >
+        <Label Content="Aim name" Margin="35,24,418,217" />
+        <Label Content="Current value" Margin="35,51,418,183" />
+        <Label Content="Aim value" Margin="35,80,418,158"/>
+        <Label Content="Description" Margin="35,112,418,126" />
+        <TextBox Name="AimNameText" HorizontalAlignment="Left" Height="23" Margin="145,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="CurrentValueText" HorizontalAlignment="Left" Height="23" Margin="145,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="AimValueText" HorizontalAlignment="Left" Height="23" Margin="145,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DescriptionText" HorizontalAlignment="Left" Height="74" Margin="145,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Click="CancelButton" Content="Cancel" Margin="35,206,444,35"/>
+        <Button Click="SaveButton" Content="Save" Margin="273,206,207,35"/>
     </Grid>
 </Window>

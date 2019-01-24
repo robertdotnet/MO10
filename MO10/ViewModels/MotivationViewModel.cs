@@ -47,10 +47,9 @@ namespace MO10
             UpdateData();
         }
 
-        public void EditUsingName(MotivationModel model)
+        public void EditUsingName(MotivationModel model, MotivationModel originalModel)
         {
-            //used for when name is not modified
-            RemoveByAim(model.Aim);
+            RemoveByAim(originalModel.Aim);
             Add(model);
             UpdateData();
         }
