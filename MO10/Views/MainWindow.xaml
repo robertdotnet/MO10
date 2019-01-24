@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="OMAF - v1.2.3 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
 
-    <Grid Name="MainGrid" Background="DarkGreen">
-        <Button Background="Green" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="10" Click="AddMotivationButton">
+    <Grid Name="MainGrid" >
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="10" Click="AddMotivationButton">
             <Button.Content>
                 <StackPanel Orientation="Vertical">
                     <Image Source="./../Assets/new1.png" Height="36" Width="77" />
@@ -16,7 +16,7 @@
                 </StackPanel>
             </Button.Content>
         </Button>
-        <Button Click="EditMotivationButton" Background="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="85,10,0,0" >
+        <Button Click="EditMotivationButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="85,10,0,0" >
             <Button.Content>
                 <StackPanel Orientation="Vertical">
                     <Image Source="./../Assets/edit1.png" Height="36" Width="77" />
@@ -24,7 +24,7 @@
                 </StackPanel>
             </Button.Content>
         </Button>
-        <Button Name="DeleteButton" Click="DeleteMotivationButton" Background="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="160,10,0,0" >
+        <Button Name="DeleteButton" Click="DeleteMotivationButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="160,10,0,0" >
             <Button.Content>
                 <StackPanel Orientation="Vertical">
                     <Image Source="./../Assets/delete1.png" Height="36" Width="77" />
@@ -32,7 +32,7 @@
                 </StackPanel>
             </Button.Content>
         </Button>
-        <Button Click="DescriptionButton" Background="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="235,10,0,0" >
+        <Button Click="DescriptionButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="235,10,0,0" >
             <Button.Content>
                 <StackPanel Orientation="Vertical">
                     <Image Source="./../Assets/description1.png" Height="36" Width="77" />
@@ -40,8 +40,6 @@
                 </StackPanel>
             </Button.Content>
         </Button>
-        <ListBox Name="MainListBox" Height="673"  VerticalAlignment="Top" Margin="10,75,26,0" BorderBrush="#FF3C549C" Background="#FFC9FFC1">
-
-        </ListBox>
+        <ListBox Name="MainListBox" Height="658"  VerticalAlignment="Top" Margin="10,90,10,0" BorderBrush="#FF3C549C"/>
     </Grid>
 </Window>

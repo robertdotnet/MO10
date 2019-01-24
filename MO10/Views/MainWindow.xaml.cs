@@ -50,9 +50,9 @@ namespace MO10
         private void CreateAndAddBox(MotivationModel motivationModel)
         {
             //actual creation
-            ItemsControl itemsControl = new ItemsControl() { Height = 105, Width = 1120, Background = Brushes.Coral };
+            ItemsControl itemsControl = new ItemsControl() { Height = 105, Width = 1130 }; // todo margins
             Label motivationNameLabel = new Label() { Content = motivationModel.Aim, FontSize = 15, FontWeight = FontWeights.Bold, Focusable = false };
-            ProgressBar motivationProgress = new ProgressBar() { Height = 25, Width = 1092, Maximum = motivationModel.FinalValue, Focusable = false };
+            ProgressBar motivationProgress = new ProgressBar() { Height = 25, Width = 1118, Maximum = motivationModel.FinalValue, Focusable = false };
 
 
 
