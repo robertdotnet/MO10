@@ -4,5 +4,11 @@
   "CurrentValue": 1000.0,
   "FinalValue": 1600.0,
   "Description": "i need a new gaming pc for games"
+},
+{
+  "Aim": "Bike",
+  "CurrentValue": 0.0,
+  "FinalValue": 400.0,
+  "Description": "I believe a bike would be very helpful for moving in the cityside."
 }
 ]

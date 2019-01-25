@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="OMAF - v1.2.3 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
-
+        Title="OMAF - v1.3.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Name="MainGrid" >
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="10" Click="AddMotivationButton">
             <Button.Content>

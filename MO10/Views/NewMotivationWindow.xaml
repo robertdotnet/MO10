@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="Make a wish" Height="341" Width="245">
+        Title="Make a wish" Height="341" Width="245" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="What are you aiming for ?" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top"/>
         <Label Content="Value" HorizontalAlignment="Left" Margin="8,67,0,0" VerticalAlignment="Top"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="Edit" Height="323" Width="321" WindowStartupLocation="CenterScreen">
+        Title="Edit" Height="323" Width="321" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid >
         <Label Content="Aim name" Margin="35,24,154,217" />
         <Label Content="Current value" Margin="35,51,154,183" />
