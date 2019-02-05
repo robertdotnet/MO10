@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -79,12 +80,29 @@ namespace MO10
             {
                 string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
                 string selectedAim = fullStringToProcess.Substring(31);
-                MotivationModel motivationToEdit = Data.GetByAim(selectedAim);
-
-
-                //TO EDIT HERE
-                DescriptionWindow descriptionWindow = new DescriptionWindow(motivationToEdit);
+                MotivationModel motivationForDescription = Data.GetByAim(selectedAim);
+                DescriptionWindow descriptionWindow = new DescriptionWindow(motivationForDescription);
                 descriptionWindow.Show();
+            }
+        }
+
+        private void SearchOnlineButton(object sender, RoutedEventArgs e)
+        {
+            ItemsControl selectedItemsControl = (ItemsControl)MainListBox.SelectedItem;
+
+            if(selectedItemsControl == null)
+            {
+                MessageBox.Show("Please select an item to be searched online");
+            }
+            else
+            {
+                string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
+                string selectedAim = fullStringToProcess.Substring(31);
+                MotivationModel motivationToSearch = Data.GetByAim(selectedAim);
+
+                string searchString = Regex.Replace(selectedAim, " ", "+");
+                
+                System.Diagnostics.Process.Start($"https://www.amazon.de/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords={searchString}");
             }
         }
 
@@ -119,7 +137,7 @@ namespace MO10
                 string fullStringToProcess = selectedItemsControl.Items.GetItemAt(0).ToString();
                 string selectedAim = fullStringToProcess.Substring(31);
                 Data.RemoveByAim(selectedAim);
-                MessageBox.Show("Getting a " + selectedAim + " no longer motivates you. It's a lost cause :(");
+                MessageBox.Show("Getting a " + selectedAim + " no longer motivates you. It's a lost cause.");
                 ShowData();
             }
         }

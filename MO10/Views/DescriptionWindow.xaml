@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="DescriptionWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Description" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="68,0" Width="656" Height="395">
             <TextBlock Name="TitleBlock" FontSize="40" FontWeight="bold" HorizontalAlignment="Center">

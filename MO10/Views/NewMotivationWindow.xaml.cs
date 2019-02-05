@@ -28,13 +28,21 @@ namespace MO10
 
         private void GetStartedButton(object sender, RoutedEventArgs e)
         {
-            if (DescriptionTextBox.Text == null || DescriptionTextBox.Text == "")
-                UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text));
+            var isNumeric = int.TryParse(ValueTextBox.Text, out int n);
+            if(isNumeric)
+            {
+
+                if(DescriptionTextBox.Text == null || DescriptionTextBox.Text == "")
+                    UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text));
+                else
+                    UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text), DescriptionTextBox.Text);
+                ((MainWindow)Application.Current.MainWindow).ShowData();
+                this.Close();
+            }
             else
-                UpdateData(AimTextBox.Text, Convert.ToDouble(ValueTextBox.Text), DescriptionTextBox.Text);
-            
-            ((MainWindow)Application.Current.MainWindow).ShowData();
-            this.Close();
+            {
+                MessageBox.Show("The entered Value must be a number.");
+            }
         }
 
         public void UpdateData(string aim, double value)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MO10"
         mc:Ignorable="d"
-        Title="OMAF - v1.3.0 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="OMAF - v1.3.1 (Developed by Robert Munteanu)" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Name="MainGrid" >
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="10" Click="AddMotivationButton">
             <Button.Content>
@@ -36,6 +36,14 @@
                 <StackPanel Orientation="Vertical">
                     <Image Source="./../Assets/description1.png" Height="36" Width="77" />
                     <TextBlock Text="Info" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Click="SearchOnlineButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="310,10,0,0" >
+            <Button.Content>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="./../Assets/search.png" Height="36" Width="77" />
+                    <TextBlock Text="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="3" FontSize="14" FontWeight="Bold" />
                 </StackPanel>
             </Button.Content>
         </Button>

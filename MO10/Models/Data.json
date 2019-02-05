@@ -1,14 +1,14 @@
 [
 {
-  "Aim": "New gaming PC",
-  "CurrentValue": 1000.0,
-  "FinalValue": 1600.0,
-  "Description": "i need a new gaming pc for games"
+  "Aim": "TV",
+  "CurrentValue": 450.0,
+  "FinalValue": 700.0,
+  "Description": "Since my TV is old, I believe it's time to buy a new one, perferably suitable for console gaming."
 },
 {
-  "Aim": "Bike",
-  "CurrentValue": 0.0,
-  "FinalValue": 400.0,
-  "Description": "I believe a bike would be very helpful for moving in the cityside."
+  "Aim": "New gaming PC",
+  "CurrentValue": 400.0,
+  "FinalValue": 1600.0,
+  "Description": "i need a new gaming pc for games"
 }
 ]
